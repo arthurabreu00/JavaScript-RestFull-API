@@ -1,8 +1,25 @@
 {
-    "main": "index.js",
-    "dependencies": {
-      "express": "4.16.3",
-      "nodemon": "1.18.4",
-      "consign": "0.1.6"
-    }
-  }
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Servidor NodeJs",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurabreu00/NodeJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthurabreu00/NodeJS/issues"
+  },
+  "homepage": "https://github.com/arthurabreu00/NodeJS#readme"
+}
