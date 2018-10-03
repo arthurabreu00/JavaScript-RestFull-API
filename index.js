@@ -5,7 +5,7 @@ let app = express();
 
 consign().include('routes').into(app);
 
-app.listen(3000,'0.0.0.0',()=>{
+app.listen(3000,'127.0.0.1',()=>{
 
     console.log("Server rodando...")
 
