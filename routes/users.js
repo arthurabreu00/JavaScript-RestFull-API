@@ -1,4 +1,12 @@
-module.exports = (app)=> {
+let NeDB = require('nedb');
+let db = new NeDB({
+
+	filename: 'users.db',
+	autoLoad: true,
+
+});
+
+module.exports = (app) => {
 
 	app.get('/users', (req, res) => {
 
@@ -19,7 +27,35 @@ module.exports = (app)=> {
 
 	app.post('/users', (req, res) => {
 
-		res.json(req.body)
+		db.find({}).sort({name: 1}).exec((err, users) => {
+
+			if (err) {
+				console.log("Erro", err);
+				res.status(400).json({
+					error: err
+				})
+			} else {
+
+
+				res.StatusCode = 200;
+				res.setHeader('Content-type', 'application/json')
+				res.json({
+					users
+				});
+			}
+		});
+
+
+		db.insert(req.body, (err, user) => {
+
+			if (err) {
+				app.utils.error.send();
+			} else {
+
+				res.status(200).json(user);
+			}
+
+		})
 
 	})
 
